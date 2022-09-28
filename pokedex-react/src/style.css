@@ -1,0 +1,370 @@
+@font-face {
+  font-family: "Oxanium";
+  src: local("Oxanium-VariableFont_wght"),
+  url("./fonts/Oxanium-VariableFont_wght.ttf");
+}
+
+*{ 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oxanium', cursive;
+}
+
+html, body, #root, .App{
+  height: 100%;
+}
+
+:root{
+  font-size: 10px;
+}
+
+.pokedex{
+  width: 42.5rem;
+  height: 63.7rem;
+  background-image: url(./images/pokedex.png);
+  margin: 10rem auto;
+  position: relative;
+}
+
+.pokedex .pokemon-img{
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  top: 30%;
+  left: 47%;
+  transform: translateX(-50%);
+  user-drag: none;  
+  user-select: none;
+}
+
+.pokedex .loading{
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  top: 33%;
+  left: 37%;
+  transform: translateX(-50%);
+  animation: rotation 1.3s infinite linear;
+  user-drag: none;  
+  user-select: none;
+}
+
+.pokedex .pokemon-data{
+  position: absolute;
+  width: 235px;
+  top: 56%;
+  left: 20%;
+  user-drag: none;  
+  user-select: none;
+  font-size: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.pokedex .pokemon-id{
+  color: #7e7d7d;
+}
+
+.pokedex input{
+  position: absolute;
+  width: 310px;
+  top: 65%;
+  left: 45.5%;
+  transform: translateX(-50%);
+  outline: none;
+  padding: 2%;
+  border:  2px solid #333;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3a444d;
+  font-size: clamp(8px, 5vw, 1rem);
+  box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+}
+
+.pokedex .d-pad{
+  position: absolute;
+  top: 81%;
+  left: 27%;
+  transform: translateX(-50%);
+}
+
+.game-and-watch-leftbutton-horizontal {
+    width: 98px;
+    height: 36px;
+    background: #e3e3e3;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+}
+
+.game-and-watch-leftbutton-vertical {
+    width: 36px;
+    height: 101px;
+    padding-top: 4px;
+    background: #e3e3e3;
+    margin-left: auto;
+    margin-top: -69px;
+    margin-right: auto;
+    margin-bottom: 4px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+}
+
+.game-and-watch-case {
+    background: #eae8db;
+    padding-top: 10px;
+    height: 350px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.game-and-watch-leftbutton-top a {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    margin-bottom: 12px;
+    height: 30px;
+    background: red;
+    margin-top: -2px;
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+.game-and-watch-leftbutton-top a:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.game-and-watch-leftbutton-bottom a {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: red;
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -1px;
+    -webkit-border-radius: 40px;
+    position: relative;
+    z-index: 9999;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+.game-and-watch-leftbutton-bottom a:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.game-and-watch-leftbutton-left a {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: red;
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+    float: left;
+    margin-top: -62px;
+    margin-left: -28px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    position: relative;
+}
+
+.game-and-watch-leftbutton-left a:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.game-and-watch-leftbutton-right a {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: red;
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+    float: right;
+    margin-top: -62px;
+    margin-right: -28px;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+.game-and-watch-leftbutton-right a:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.game-and-watch-leftbutton-cover {
+    width: 40px;
+    height: 35px;
+    background: #e3e3e3;
+    margin-left: -2px;
+    margin-top: -10px;
+}
+
+.button-container{
+  position: absolute;
+  top: 75%;
+  right: 27%;
+}
+
+
+.button-case {
+    width: 50px;
+    height: 117px;
+    border: 5px solid #e3e3e3;
+    margin-bottom: 10px;
+    background-color: #e3e3e3;
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    transform: rotateZ(40deg);
+}
+
+.high-button a {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    display: block;
+    height: 40px;
+    background: red;
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    margin-bottom: 27px;
+}
+
+.high-button a:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.search-icon{
+  height: 25px;
+  position: absolute;
+  top: 19%;
+  left: 20%;
+  transform: rotateZ(40deg);
+}
+
+.high-button a:active .search-icon{
+  height: 24px;
+}
+
+.low-button a {
+    cursor: pointer;
+    width: 40px;
+    display: block;
+    height: 40px;
+    background: red;
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+    -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 90%);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+.low-button a:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
+  }
+}
